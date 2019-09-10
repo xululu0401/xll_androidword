@@ -1,0 +1,28 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!--activity animation should be used here-->
+        <item name="android:windowAnimationStyle">@style/CustomActivityAnim</item>
+    </style>
+
+    <!--custom window animation give this id to layoutparams of the window of dialog-->
+    <style name="CustomDlgAnim">
+        <item name="android:windowEnterAnimation"></item>
+        <item name="android:windowExitAnimation"></item>
+    </style>
+
+    <!--windowanimation need extends Animation.Activity, or it will be unuseful-->
+    <style name="CustomActivityAnim" parent="@android:style/Animation.Activity">
+        <item name="android:activityCloseEnterAnimation"></item>
+        <item name="android:activityCloseExitAnimation"></item>
+        <item name="android:activityOpenEnterAnimation"></item>
+        <item name="android:activityOpenExitAnimation"></item>
+    </style>
+
+</resources>

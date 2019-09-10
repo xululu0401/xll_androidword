@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PluginDemo</string>
+
+    <string name="plugin_hello_world">你好，我的插件世界</string>
+</resources>

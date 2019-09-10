@@ -1,1 +1,3 @@
-include ':app', ':servicemodule', ':greendaotestmodule'
+include ':app', ':servicemodule', ':greendaotestmodule', ':rxjavamodule', ':lifecylcedemo',
+        ':applicationtestmodule', ':animatortest', ':recyclerviewdemo', ':mvvmmodule', ':fragmentmodule', ':utilmodule', ':ndkmodule', ':buildermodelmodule', ':viewmodelmodule', ':activitylifecylemoduel' ,
+        ':internationmodule', ':testmodule', ':hookmodule', ':mypluginlibrary', ':PluginDemo'
