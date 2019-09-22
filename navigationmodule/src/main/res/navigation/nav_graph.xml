@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragmentMain">
+    <fragment
+        android:id="@+id/fragmentMain"
+        android:name="com.xululu.navigationmodule.FragmentMain"
+        android:label="fragment_fragment_main"
+        tools:layout="@layout/fragment_fragment_main" >
+        <action
+            android:id="@+id/action_fragmentMain_to_fragmentOther"
+            app:destination="@id/fragmentOther" />
+        <action
+            android:id="@+id/action_fragmentMain_to_blankFragment22"
+            app:destination="@id/blankFragment22" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentOther"
+        android:name="com.xululu.navigationmodule.BlankFragment"
+        tools:layout="@layout/fragment_blank" />
+    <fragment
+        android:id="@+id/blankFragment22"
+        android:name="com.xululu.navigationmodule.BlankFragment2"
+        android:label="fragment_blank_fragment2"
+        tools:layout="@layout/fragment_blank_fragment2" />
+</navigation>

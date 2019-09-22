@@ -1,4 +1,4 @@
-package com.xululu.lifecylcedemo;
+package com.xululu.keepservicemodule;
 
 import org.junit.Test;
 

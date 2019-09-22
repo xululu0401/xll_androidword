@@ -9,36 +9,25 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 /**
  * Author: llxu4
- * Time: 2019-07-17 15:43
+ * Time: 2019-09-14 18:04
  */
-public class TestFragment  extends Fragment {
+public class TestFragment2 extends Fragment {
 
-    private static final String TAG = "TestFragment";
-
-    private TextView mTv;
+    private static final String TAG = "TestFragment2";
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d(TAG, "oncreate");
-
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        Log.d(TAG, "oncreateview");
-        View view = inflater.inflate(R.layout.test_fragment_layout, container,false);
-        mTv = view.findViewById(R.id.testtv);
+        View view = inflater.inflate(R.layout.test_fragment_lyt2, null);
         return view;
-    }
-
-    public void setTvContent(String contentStr){
-        mTv.setText(contentStr);
     }
 
     @Override

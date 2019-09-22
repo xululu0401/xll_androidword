@@ -1,8 +1,10 @@
 package com.xululu.activitylifecylemoduel;
 
 import android.app.Dialog;
+import android.arch.lifecycle.Lifecycle;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -47,10 +49,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (v == mChangeBtn) {
             mShowTv.setText("修改后的值");
         } else if (v == mJumpBtn) {
-            Intent intent = new Intent("pipilu");
-            intent.setDataAndType(Uri.parse("http://www.pipilu.com:20"), "image/jpg");
-            startActivity(intent);
+//            Intent intent = new Intent("pipilu");
+//            intent.setDataAndType(Uri.parse("http://www.pipilu.com:20"), "image/jpg");
+//            startActivity(intent);
+
+            Log.d(TAG, (Lifecycle.State.DESTROYED).compareTo(Lifecycle.State.CREATED)+" ");
         }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
+        super.onSaveInstanceState(outState, outPersistentState);
+        Log.d(TAG, "onSaveInstance");
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState, PersistableBundle persistentState) {
+        super.onRestoreInstanceState(savedInstanceState, persistentState);
+        Log.d(TAG, "onrestoreInstance");
     }
 
     @Override
