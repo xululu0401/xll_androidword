@@ -1,4 +1,4 @@
-git package com.xululu.butterknifemodule;
+package com.xululu.butterknifemodule;
 
 import androidx.appcompat.app.AppCompatActivity;
 
