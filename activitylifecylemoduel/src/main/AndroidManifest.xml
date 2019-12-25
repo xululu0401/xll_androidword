@@ -11,11 +11,18 @@
         android:theme="@style/AppTheme">
         <activity android:name=".SecondActivity">
             <intent-filter>
-                <action android:name="pipilu"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <data android:mimeType="image/jpg" android:scheme="http" android:host="www.pipilu.com" android:port="20"/>
+                <action android:name="pipilu" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="www.pipilu.com"
+                    android:mimeType="image/jpg"
+                    android:port="20"
+                    android:scheme="http" />
             </intent-filter>
         </activity>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,6 +30,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <receiver
+            android:name=".CloseAppReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.xululu.close.app"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

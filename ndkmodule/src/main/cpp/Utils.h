@@ -11,13 +11,13 @@
 #include "../../../../../../../../Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot/usr/include/jni.h"
 using namespace cv;
 
-extern"C" {
 void bitmap2Mat(JNIEnv *env, jobject &bitmap, Mat &mat);
 
 void mat2Bitmap(JNIEnv *env, Mat mat, jobject bitmap, bool needPremultiplyAlpha = 0);
 
-jobject createBitmap2(JNIEnv *env, Mat &srcData, jobject &obj_bitmap);
+jobject createBitmap(JNIEnv *env, Mat &srcData, jobject &obj_bitmap);
 
-}
+jobject createBitmap(JNIEnv *env, cv::Mat &pngimage);
+
 
 #endif //ANDROIDWROLD_UTILS_H

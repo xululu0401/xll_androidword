@@ -1,9 +1,12 @@
 package com.xululu.ndkmodule;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,6 +28,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button mGetNumBtn;
     private ImageView mNumIv;
     private TessBaseAPI mTessBaseAPI;
+    private ImageView mResizedIv;
+    private ImageView mBinaryIv;
+    private ImageView mEroIv;
+
 
     static {
         System.loadLibrary("native-lib");
@@ -34,24 +41,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Bitmap bitmap = ((BitmapDrawable) getResources().getDrawable(
-                R.mipmap.idcard)).getBitmap();
-        int w = bitmap.getWidth(), h = bitmap.getHeight();
-        int[] pix = new int[w * h];
-        bitmap.getPixels(pix, 0, w, 0, 0, w, h);
-        // 调用JNI实现的gray方法
-        int [] resultPixes = gray(pix,w,h);
-        Bitmap result = Bitmap.createBitmap(w,h, Bitmap.Config.RGB_565);
-        result.setPixels(resultPixes, 0, w, 0, 0,w, h);
-
-        ImageView img = (ImageView)findViewById(R.id.img2);
-        img.setImageBitmap(result);
-
         mResultTv = findViewById(R.id.result_tv);
         mGetNumBtn = findViewById(R.id.get_num_btn);
         mGetNumBtn.setOnClickListener(this);
         mNumIv = findViewById(R.id.num_iv);
+        mResizedIv = findViewById(R.id.resized_iv);
+        mBinaryIv = findViewById(R.id.binary_iv);
+        mEroIv = findViewById(R.id.erod_iv);
     }
 
     private String getRecString(Bitmap bitmap) {
@@ -66,32 +62,51 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return result;
     }
 
-    /**
-     * A native method that is implemented by the 'native-lib' native library,
-     * which is packaged with this application.
-     */
     public native String stringFromJNI();
     public native int[] gray(int[] buf, int w, int h);
 
     @Override
     public void onClick(View v) {
         if (v == mGetNumBtn){
-            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.idcard);
-            final Bitmap idNumberBitmap = findIdNumber(bitmap, Bitmap.Config.ARGB_8888);
-            if (idNumberBitmap != null) {
+            Intent i = new Intent("com.xululu.close.app");
+            sendBroadcast(i);
+            final Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.idcard);
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        Log.d("llxu4 result", getRecString(idNumberBitmap));
+                        //首先进行归一化
+                        final Bitmap resizedBitmap = getResizedBitmap(bitmap);
+                        //二值化的图像
+                        final Bitmap binaryBitmap = getBinaryBitmap(resizedBitmap);
+                        final Bitmap erodeBitmap = getErodeBitmap(binaryBitmap);
+                        final Bitmap resultBitmap = findIdNumber(bitmap);
+                        final String resultNum = getRecString(resultBitmap);
+                        Log.d("llxu4 image", "  "+erodeBitmap);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                mResizedIv.setImageBitmap(resizedBitmap);
+                                mBinaryIv.setImageBitmap(binaryBitmap);
+                                mEroIv.setImageBitmap(erodeBitmap);
+                                mNumIv.setImageBitmap(resultBitmap);
+                                mResultTv.setText(resultNum);
+                            }
+                        });
 
                     }
                 }).start();
-            } else
-                return;
         }
     }
 
-    private native Bitmap findIdNumber(Bitmap bitmap, Bitmap.Config argb8888);
+    private native Bitmap findIdNumber(Bitmap bitmap);
+
+    private native Bitmap getResizedBitmap(Bitmap bitmap);
+
+    private native Bitmap getBinaryBitmap(Bitmap bitmap);
+
+    private native Bitmap getErodeBitmap(Bitmap bitmap);
+
+    private native Bitmap getResultBitmap(Bitmap bitmap, Bitmap srcBitmap);
 
 
 }

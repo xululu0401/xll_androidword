@@ -20,8 +20,6 @@
 
 #define ASSERT1(status, ret)  if(!(status)) {return NULL;}
 #define ASSERT_FALSE1(status) ASSERT1(status, false)
-#define LOGE(...) __android_log_print(ANDROID_LOG_ERROR, "llxu4error", __VA_ARGS__)
-#define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG, "llxu4debug", __VA_ARGS__)
 using namespace cv;
 
 void bitmap2Mat(JNIEnv *env, jobject &bitmap, Mat &mat){
@@ -47,7 +45,7 @@ void bitmap2Mat(JNIEnv *env, jobject &bitmap, Mat &mat){
     AndroidBitmap_unlockPixels(env, bitmap);
 }
 
-jobject createBitmap2(JNIEnv *env, Mat &srcData, jobject& obj_bitmap) {
+jobject createBitmap(JNIEnv *env, Mat &srcData, jobject& obj_bitmap) {
     AndroidBitmapInfo info;
     void *pixels = 0;
     Mat &src = srcData;
@@ -98,4 +96,22 @@ jobject createBitmap2(JNIEnv *env, Mat &srcData, jobject& obj_bitmap) {
         env->ThrowNew(je, "Unknown exception in JNI code {nMatToBitmap}");
         return NULL;
     }
+}
+
+jobject createBitmap(JNIEnv *env, cv::Mat &pngimage) {
+    // Image Details
+    int imgWidth = pngimage.cols;
+    int imgHeight = pngimage.rows;
+    int numPix = imgWidth * imgHeight;
+    // Creaing Bitmap Config Class
+    jclass bmpCfgCls = env->FindClass("android/graphics/Bitmap$Config");
+    jmethodID bmpClsValueOfMid = env->GetStaticMethodID(bmpCfgCls, "valueOf",
+                                                        "(Ljava/lang/String;)Landroid/graphics/Bitmap$Config;");
+    jobject jBmpCfg = env->CallStaticObjectMethod(bmpCfgCls, bmpClsValueOfMid,
+                                                  env->NewStringUTF("RGB_565" /*or*/ /*"ARGB_8888"*/));
+    // Creating a Bitmap Class
+    jclass bmpCls = env->FindClass("android/graphics/Bitmap");
+    jmethodID createBitmapMid = env->GetStaticMethodID(bmpCls, "createBitmap",
+                                                       "(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;");
+    return env->CallStaticObjectMethod(bmpCls, createBitmapMid, imgWidth, imgHeight, jBmpCfg);
 }

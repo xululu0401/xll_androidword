@@ -10,7 +10,7 @@ set(CMAKE_VERBOSE_MAKEFILE on)
 #配置加载native依赖
 include_directories(${PROJECT_SOURCE_DIR}/include)
 #动态方式加载
-add_library(lib_opencv SHARED IMPORTED ) #表示创建一个导入库，静态方式
+add_library(lib_opencv SHARED IMPORTED ) #表示创建一个导入库
 #引入libopencv_java3.so文件
 set_target_properties(lib_opencv
         PROPERTIES
@@ -43,6 +43,7 @@ find_library( # Sets the name of the path variable.
 
 target_link_libraries( # Specifies the target library.
         native-lib
+
 
         # Links the target library to the log library
         # included in the NDK.
