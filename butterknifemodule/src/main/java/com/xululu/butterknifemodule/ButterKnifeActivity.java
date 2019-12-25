@@ -28,7 +28,7 @@ public class ButterKnifeActivity extends AppCompatActivity {
 
     @OnClick({R.id.test_tv, R.id.test_btn})
     public void onClick(View view) {
-        switch (view) {
+        switch (view.getId()) {
             case R.id.test_tv:
                 break;
             case R.id.test_btn:
