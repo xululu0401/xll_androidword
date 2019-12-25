@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         SparseArray array = new SparseArray();
-        array.put("String", "jjj");
 
     }
 }
