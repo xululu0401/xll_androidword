@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 /**
- * Author: llxu4
+ * Author: pipilu
  * Time: 2019-07-10 22:20
  */
 public class TestAdapter extends RecyclerView.Adapter<TestVH> {

@@ -7,7 +7,7 @@ import org.greenrobot.greendao.annotation.Property;
 import org.greenrobot.greendao.annotation.Generated;
 
 /**
- * Author: llxu4
+ * Author: pipilu
  * Time: 2019/6/17 22:28
  */
 @Entity

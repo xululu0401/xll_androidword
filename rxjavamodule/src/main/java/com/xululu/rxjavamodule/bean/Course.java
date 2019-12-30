@@ -1,7 +1,7 @@
 package com.xululu.rxjavamodule.bean;
 
 /**
- * Author: llxu4
+ * Author: pipilu
  * Time: 2019-07-27 14:36
  */
 public class Course {

@@ -8,7 +8,7 @@ import com.xululu.greendaotestmodule.dao.StudentDao;
 
 /**
  * greenDao的使用
- * Author: llxu4
+ * Author: pipilu
  * Time: 2019/6/18 09:22
  */
 public class MyApplication extends Application {

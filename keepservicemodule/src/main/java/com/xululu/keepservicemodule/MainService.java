@@ -16,7 +16,7 @@ import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 
 /**
- * Author: llxu4
+ * Author: pipilu
  * Time: 2019-09-18 22:38
  */
 public class MainService extends Service {

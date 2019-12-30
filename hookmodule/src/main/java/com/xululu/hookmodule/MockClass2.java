@@ -8,7 +8,7 @@ import com.xululu.hookmodule.utils.AMSHookHelper;
 import com.xululu.hookmodule.utils.RefInvoke;
 
 /**
- * Author: llxu4
+ * Author: pipilu
  * Time: 2019-08-28 01:03
  */
 public class MockClass2 implements Handler.Callback {

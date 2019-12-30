@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         final Bitmap erodeBitmap = getErodeBitmap(binaryBitmap);
                         final Bitmap resultBitmap = findIdNumber(bitmap);
                         final String resultNum = getRecString(resultBitmap);
-                        Log.d("llxu4 image", "  "+erodeBitmap);
+                        Log.d("pipilu image", "  "+erodeBitmap);
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {

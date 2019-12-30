@@ -3,7 +3,7 @@ package com.xululu.rxjavamodule.bean;
 import java.util.List;
 
 /**
- * Author: llxu4
+ * Author: pipilu
  * Time: 2019-08-04 23:49
  */
 public class YDTranslation {

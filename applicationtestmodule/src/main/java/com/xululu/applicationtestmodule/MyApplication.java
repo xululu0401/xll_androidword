@@ -5,7 +5,7 @@ import android.content.ComponentCallbacks;
 import android.content.ComponentCallbacks2;
 
 /**
- * Author: llxu4
+ * Author: pipilu
  * Time: 2019/6/19 22:35
  */
 public class MyApplication extends Application {

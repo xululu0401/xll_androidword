@@ -14,7 +14,7 @@ import java.lang.reflect.Proxy;
 import java.sql.Ref;
 
 /**
- * Author: llxu4
+ * Author: pipilu
  * Time: 2019-08-27 13:12
  */
 public class AMSHookHelper {

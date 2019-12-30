@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 import android.os.Build;
 
 /**
- * Author: llxu4
+ * Author: pipilu
  * Time: 2019-08-06 22:13
  */
 public class Student extends AbsStudent{

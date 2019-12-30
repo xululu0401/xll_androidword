@@ -10,7 +10,7 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
 /**
- * Author: llxu4
+ * Author: pipilu
  * Time: 2019-08-27 23:38
  */
 public class MockClass1s implements InvocationHandler {

@@ -6,7 +6,7 @@ import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleOwner;
 
 /**
- * Author: llxu4
+ * Author: pipilu
  * Time: 2019-09-02 20:43
  */
 public class LifecyclePresenter implements IPresenter{

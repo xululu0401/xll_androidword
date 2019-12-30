@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
                 .setName("zhangsan")
                 .setStuId("0000")
                 .build();
-        Log.e("llxu4", student.getName()+"   ***   "+ student.getStuId()+"   ***   "+
+        Log.e("pipilu", student.getName()+"   ***   "+ student.getStuId()+"   ***   "+
                 student.getAge());
     }
 }

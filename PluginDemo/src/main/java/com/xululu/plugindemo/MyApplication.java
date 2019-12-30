@@ -3,7 +3,7 @@ package com.xululu.plugindemo;
 import android.app.Application;
 
 /**
- * Author: llxu4
+ * Author: pipilu
  * Time: 2019-08-28 20:20
  */
 public class MyApplication extends Application {

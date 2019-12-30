@@ -10,7 +10,7 @@ import android.util.Log;
 import androidx.annotation.Nullable;
 
 /**
- * Author: llxu4
+ * Author: pipilu
  * Time: 2019-09-18 22:48
  */
 public class HelpService extends Service {

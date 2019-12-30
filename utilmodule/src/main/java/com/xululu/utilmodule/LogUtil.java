@@ -4,7 +4,7 @@ import android.util.Log;
 
 /**
  * 日志类，封装日志级别
- * Author: llxu4
+ * Author: pipilu
  * Time: 2019-07-25 23:30
  */
 public class LogUtil {

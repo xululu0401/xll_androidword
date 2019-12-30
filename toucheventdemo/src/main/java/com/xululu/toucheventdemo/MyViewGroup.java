@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 
 
 /**
- * Author: llxu4
+ * Author: pipilu
  * Time: 2019-09-23 18:54
  */
 public class MyViewGroup extends LinearLayout {

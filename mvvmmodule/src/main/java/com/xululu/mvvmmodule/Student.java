@@ -1,7 +1,7 @@
 package com.xululu.mvvmmodule;
 
 /**
- * Author: llxu4
+ * Author: pipilu
  * Time: 2019-07-15 14:23
  */
 public class Student {

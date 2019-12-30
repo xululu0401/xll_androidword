@@ -1,7 +1,7 @@
 package com.xululu.buildermodelmodule.data;
 
 /**
- * Author: llxu4
+ * Author: pipilu
  * Time: 2019-08-06 22:21
  */
 public abstract class AbsStudent {
