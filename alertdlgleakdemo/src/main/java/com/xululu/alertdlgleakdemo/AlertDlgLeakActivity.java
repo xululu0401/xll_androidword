@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 /**
- * 再使用dialog的过程中发现AlertDialog存在内存泄漏的情况，
+ * 在使用dialog的过程中发现AlertDialog存在内存泄漏的情况，
  * 如果要处理AlertDialog中引起的内存泄漏，可以参考该模块。
  * 对于短时间内存泄漏，个人认为不处理也没有大的影响。
  */

@@ -1,6 +1,7 @@
-package com.xululu.recycleviewdemo;
+package com.xululu.recycleviewdemo.normalrv;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -9,6 +10,9 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.xululu.recycleviewdemo.R;
+import com.xululu.recycleviewdemo.cusviews.CustomRVActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +41,7 @@ public class MainActivity extends Activity {
     private TestAdapter mAdapter;
     private List<String> mDatas = new ArrayList<>();
     private Button mBtn;
+    private Button mGoCusBtn;
     private int flag=0;
     private LinearLayoutManager mManager;
 
@@ -75,6 +80,15 @@ public class MainActivity extends Activity {
                     }
 
                 }
+            }
+        });
+
+        mGoCusBtn = findViewById(R.id.go_cus_btn);
+        mGoCusBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CustomRVActivity.class);
+                startActivity(intent);
             }
         });
     }
