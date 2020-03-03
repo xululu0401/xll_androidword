@@ -9,7 +9,7 @@ import com.xululu.aidlmodule.aidl.Book;
 import java.util.List;
 
 /**
- * Author: llxu4
+ * Author: pipilu
  * Time: 2020-02-24 22:07
  */
 public interface IBookManager extends IInterface {

@@ -6,7 +6,7 @@ import android.util.Log;
 import androidx.recyclerview.widget.LinearSmoothScroller;
 
 /**
- * Author: llxu4
+ * Author: pipilu
  * Time: 2020-01-06 19:52
  */
 public class TestScroller extends LinearSmoothScroller {
@@ -32,3 +32,4 @@ public class TestScroller extends LinearSmoothScroller {
         return SNAP_TO_END;
     }
 }
+ 

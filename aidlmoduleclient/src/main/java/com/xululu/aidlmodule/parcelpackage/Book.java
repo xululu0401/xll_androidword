@@ -12,7 +12,6 @@ public class Book implements Parcelable {
     public float price;
     public String name;
 
-
     @Override
     public int describeContents() {
         return 0;

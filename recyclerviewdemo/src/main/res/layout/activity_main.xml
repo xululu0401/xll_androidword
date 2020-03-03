@@ -20,10 +20,6 @@
         android:layout_alignParentBottom="true"
         android:text="单条刷新"/>
 
-    <Button
-        android:id="@+id/go_cus_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="自定义滚动操作"/>
+
 
 </RelativeLayout>

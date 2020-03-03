@@ -15,7 +15,7 @@ import com.xululu.aidlmodule.aidl.Book;
 import java.util.List;
 
 /**
- * Author: llxu4
+ * Author: pipilu
  * Time: 2020-02-24 22:13
  */
 public class BookManagerImpl extends Binder implements IBookManager {

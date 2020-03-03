@@ -82,15 +82,6 @@ public class MainActivity extends Activity {
                 }
             }
         });
-
-        mGoCusBtn = findViewById(R.id.go_cus_btn);
-        mGoCusBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, CustomRVActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 
     private void loadMoreDatas() {

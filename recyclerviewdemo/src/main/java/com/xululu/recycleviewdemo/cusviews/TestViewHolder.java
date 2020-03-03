@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.xululu.recycleviewdemo.R;
 
 /**
- * Author: llxu4
+ * Author: pipilu
  * Time: 2020-01-06 19:45
  */
 public class TestViewHolder extends RecyclerView.ViewHolder {

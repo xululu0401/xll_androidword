@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 /**
- * Author: llxu4
+ * Author: pipilu
  * Time: 2020-01-06 19:51
  */
 public class TestLineaLayoutMgr extends LinearLayoutManager {

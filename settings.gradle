@@ -1,3 +1,3 @@
-include ':app', ':servicemodule', ':greendaotestmodule', ':rxjavamodule', ':lifecylcedemo', ':navigationmodule', ':keepservicemodule', ':stubviewmodule', ':toucheventdemo', ':viewusemodule', ':splashdemo', ':butterknifemodule', ':alertdlgleakdemo', ':mediatorpatternmodule', ':animationmodule',
+include ':app', ':servicemodule', ':greendaotestmodule', ':rxjavamodule', ':lifecylcedemo', ':navigationmodule', ':keepservicemodule', ':stubviewmodule', ':toucheventdemo', ':viewusemodule', ':splashdemo', ':butterknifemodule', ':alertdlgleakdemo', ':mediatorpatternmodule', ':animationmodule', ':ipcmodule', ':processmodule', ':aidlmoduleclient', ':aidlmoduleservice',
         ':applicationtestmodule', ':animatortest', ':recyclerviewdemo', ':mvvmmodule', ':fragmentmodule', ':utilmodule', ':ndkmodule', ':buildermodelmodule', ':viewmodelmodule', ':activitylifecylemoduel' ,
         ':internationmodule', ':testmodule', ':hookmodule', ':mypluginlibrary', ':PluginDemo'

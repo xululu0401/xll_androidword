@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 /**
- * Author: llxu4
+ * Author: pipilu
  * Time: 2020-01-06 19:43
  */
 public class TestAdapter extends RecyclerView.Adapter<TestViewHolder> {
